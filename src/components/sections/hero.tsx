@@ -1,0 +1,127 @@
+"use client";
+
+import Profile from "@/components/profile";
+import { Button } from "@/components/ui/button";
+import { Typewriter } from "@/components/ui/typewriter";
+import { ArrowUpRight, Download } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+
+const Hero = () => {
+  return (
+    <div className="relative flex flex-col justify-center overflow-hidden border-b pt-12">
+      <div className="px-4 pb-6 md:px-8 md:pb-14 lg:px-20">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-12 text-center md:flex-row md:text-left"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative">
+              <div className="absolute -inset-1 rotate-3 rounded-lg border-2" />
+              <div className="absolute -inset-1 -rotate-3 rounded-lg border-2" />
+              <div className="bg-background relative rounded-lg border-2 p-2">
+                <Profile />
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="md:flex-1">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-4 inline-flex items-center gap-2"
+            >
+              <div className="bg-background border px-3 py-1">
+                <span className="text-foreground/60 font-mono text-xs">
+                  {"<"} Hello World {"/>"}
+                </span>
+              </div>
+              <div className="h-px w-5 bg-[#e1e1e1]" />
+              <span className="text-foreground/50 font-mono text-xs md:text-xs">
+                <Typewriter
+                  text={["Full-Stack Web Dev", "Electrical Engineering"]}
+                  speed={85}
+                  waitTime={1500}
+                  deleteSpeed={40}
+                  cursorChar="_"
+                />
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-incognito mb-4 text-lg leading-tight font-semibold md:text-3xl lg:text-3xl"
+            >
+              <span className="text-foreground">Hey, I&apos;m </span>
+              <span className="relative text-[#8cc2ff] italic">
+                <Typewriter
+                  text={["Rachdian Muhammad Adha", ""]}
+                  speed={85}
+                  waitTime={1500}
+                  deleteSpeed={40}
+                  cursorChar="|"
+                />
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
+            >
+              Fullstack developer with a passion for building web applications.
+              I specialize in React, Next.js, Node.js, and TypeScript.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-5 flex items-center gap-4 max-md:mx-auto max-md:justify-center"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="group/btn border-2 font-medium"
+              >
+                <a href={"#contact"}>
+                  Lets Connect
+                  <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="group/btn border-2 font-medium"
+              >
+                <Link
+                  href={
+                    "https://drive.google.com/file/d/1L-oBSiQbQVfuHhaS99fHtSj-wSgnc4gu/view?usp=drive_link"
+                  }
+                >
+                  <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
+                  Download CV
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
