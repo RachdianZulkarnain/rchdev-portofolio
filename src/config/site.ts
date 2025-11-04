@@ -1,7 +1,5 @@
 import env from "./env";
 
-
-
 export const siteConfig = {
   url: env.NEXT_PUBLIC_APP_URL,
   linkedin: "https://www.linkedin.com/in/rachdian-muhammad-adha-4280a6174/",

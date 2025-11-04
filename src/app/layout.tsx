@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import FloatingAvatar from "@/components/floating-avatar";
+import MotionConfigWrapper from "@/components/motion-config";
+import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
-import { incognito, pixelifySans } from "../assets/fonts";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from "next";
+import { geistMono, geistSans, incognito, pixelifySans } from "../assets/fonts";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Rachdian Muhammad Adha | dev portofolio",
@@ -26,11 +18,11 @@ export const metadata: Metadata = {
         url: "/og.png",
         alt: "Rachdian portofolio",
       },
-    ]
+    ],
   },
   twitter: {
     card: "summary_large_image",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "mx-auto font-sans antialiased",
@@ -49,7 +41,12 @@ export default function RootLayout({
           pixelifySans.variable
         )}
       >
-        {children}
+        <Providers>
+          <MotionConfigWrapper>
+            <FloatingAvatar />
+            {children}
+          </MotionConfigWrapper>
+        </Providers>
       </body>
     </html>
   );
