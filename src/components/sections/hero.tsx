@@ -61,7 +61,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-incognito mb-4 text-lg leading-tight font-semibold md:text-3xl lg:text-3xl"
+              className="font-incognito mb-4 text-lg leading-tight font-semibold md:text-4xl lg:text-6xl"
             >
               <span className="text-foreground">Hey, I&apos;m </span>
               <span className="relative text-[#8cc2ff] italic">
