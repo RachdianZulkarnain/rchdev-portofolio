@@ -11,7 +11,7 @@ import { Logo } from "../ui/logo";
 
 const NAV_LINKS = [
   { id: "home", label: "Home" },
-  { id: "about", label: "About" },
+  // { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "stats", label: "Stats" },
   { id: "contact", label: "Contact" },

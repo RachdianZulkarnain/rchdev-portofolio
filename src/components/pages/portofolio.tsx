@@ -33,7 +33,7 @@ const PortfolioPage = () => {
             <div className="min-h-[calc(100vh-4rem)] md:border-r md:border-l">
               <Hero />
               <Projects />
-              <About />
+              {/* <About /> */}
               <Contact />
               <Footer />
             </div>

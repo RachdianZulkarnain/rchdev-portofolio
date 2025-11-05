@@ -48,7 +48,7 @@ const Hero = () => {
               <div className="h-px w-5 bg-[#e1e1e1]" />
               <span className="text-foreground/50 font-mono text-xs md:text-xs">
                 <Typewriter
-                  text={["Full-Stack Web Dev", "Electrical Engineering"]}
+                  text={["Full-Stack Web Developer"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -66,7 +66,7 @@ const Hero = () => {
               <span className="text-foreground">Hey, I&apos;m </span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Rachdian Muhammad Adha", ""]}
+                  text={["Rachdian"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -81,8 +81,14 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
             >
-              Fullstack developer with a passion for building web applications.
-              I specialize in React, Next.js, Node.js, and TypeScript.
+              I’m a passionate Full Stack Web Developer based in Indonesia,
+              dedicated to crafting modern, dynamic websites and applications.
+              With a focus on utilizing the latest technologies, I love bringing
+              ideas to life on the internet—whether it's building sleek
+              websites, powerful applications, or innovative solutions. My
+              journey is fueled by curiosity and a commitment to continuous
+              learning, enriched by diverse projects and experiences that drive
+              me to deliver impactful digital creations.
             </motion.p>
 
             <motion.div
