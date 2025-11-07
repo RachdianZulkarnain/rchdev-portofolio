@@ -6,6 +6,7 @@ import Hero from "../sections/hero";
 import Projects from "../sections/projects";
 import { BackgroundNoise } from "../backgrounds";
 import Contact from "../sections/contact";
+import Stats from "../sections/github-stats";
 
 const PortfolioPage = () => {
   return (
@@ -34,6 +35,7 @@ const PortfolioPage = () => {
               <Hero />
               <Projects />
               {/* <About /> */}
+              <Stats />
               <Contact />
               <Footer />
             </div>

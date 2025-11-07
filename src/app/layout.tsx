@@ -7,7 +7,7 @@ import { geistMono, geistSans, incognito, pixelifySans } from "../assets/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rachdian Muhammad Adha | dev portofolio",
+  title: "Rachdian Muhammad Adha | portofolio",
   description:
     "my personal portofolio website showcasing my skills and projects",
   keywords: ["portofolio", "nextjs", "typescript", "tailwindcss", "react"],

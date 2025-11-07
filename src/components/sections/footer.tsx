@@ -50,7 +50,7 @@ const Footer = () => {
             whileTap={{ scale: 0.95 }}
             className="hover:bg-foreground/5 rounded-md border px-2 py-1 transition-all"
           >
-            <ArrowBigUp />
+            <ArrowBigUp className="h-5 w-5" />
           </motion.a>
         </div>
       </div>

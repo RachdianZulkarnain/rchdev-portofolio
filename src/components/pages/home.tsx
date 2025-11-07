@@ -442,6 +442,7 @@ const HomePage = () => {
                 theme={(resolvedTheme as "light" | "dark") || "light"}
               />
             </button>
+            
           )}
         </motion.div>
       </nav>

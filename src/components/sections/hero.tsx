@@ -3,7 +3,7 @@
 import Profile from "@/components/profile";
 import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/typewriter";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
@@ -61,12 +61,12 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-incognito mb-4 text-lg leading-tight font-semibold md:text-4xl lg:text-6xl"
+              className="font-incognito mb-4 text-xl leading-tight font-semibold md:text-4xl lg:text-3xl"
             >
               <span className="text-foreground">Hey, I&apos;m </span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Rachdian"]}
+                  text={["Rachdian Muhammad Adha"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -125,6 +125,10 @@ const Hero = () => {
             </motion.div>
           </div>
         </motion.div>
+      </div>
+      <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex">
+        SCROLL DOWN
+        <ArrowDownSquareIcon className="size-4 animate-pulse" />
       </div>
     </div>
   );
