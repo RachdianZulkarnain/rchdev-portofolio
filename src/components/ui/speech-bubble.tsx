@@ -2,6 +2,7 @@
 
 import React , { useMemo, type JSX  } from "react";
 import { cn } from "@/lib/utils"; 
+import "@/styles/speech-bubble.css";
 
 export interface SpeechBubbleProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

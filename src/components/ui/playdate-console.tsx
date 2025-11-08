@@ -111,7 +111,7 @@ const DirBtn = ({ className, onClick }: DirBtnProps) => {
     <button
       onClick={handleClick}
       className={cn(
-        `absolute cursor-pointer border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),inset_0_3px_4px_1px_#fff]  after:-right-px after:-bottom-px after:-left-px after:rounded-[36px] after:border after:border-[rgba(255,255,255,0)] after:shadow-[inset_10px_60px_2px_-40px_rgba(255,255,255,0.36)] after:content-[''] active:scale-90 active:brightness-110`,
+        `absolute cursor-pointer border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),_2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),_inset_0_3px_4px_1px_#fff] transition-all duration-150 after:absolute after:top-[-1px] after:right-[-1px] after:bottom-[-1px] after:left-[-1px] after:rounded-[36px] after:border after:border-[rgba(255,255,255,0)] after:shadow-[inset_10px_60px_2px_-40px_rgba(255,255,255,0.36)] after:content-[''] active:scale-90 active:brightness-110`,
         className
       )}
     />
@@ -134,26 +134,26 @@ const DPad = ({
     >
       {/* Left */}
       <DirBtn
-        className="top-11 left-[-47px] h-[42px] w-[67px] rounded-tl-[36px] rounded-bl-[36px]"
+        className="top-[44px] left-[-47px] h-[42px] w-[67px] rounded-tl-[36px] rounded-bl-[36px]"
         onClick={() => onClick?.("left")}
       />
       {/* Right */}
       <DirBtn
-        className="top-11 left-[18px] h-[42px] w-[67px] rounded-tr-[36px] rounded-br-[36px]"
+        className="top-[44px] left-[18px] h-[42px] w-[67px] rounded-tr-[36px] rounded-br-[36px]"
         onClick={() => onClick?.("right")}
       />
       {/* Up */}
       <DirBtn
-        className="top-0 left-0 h-12 w-[38px] rounded-tl-[36px] rounded-tr-[36px]"
+        className="top-0 left-0 h-[48px] w-[38px] rounded-tl-[36px] rounded-tr-[36px]"
         onClick={() => onClick?.("up")}
       />
       {/* Down */}
       <DirBtn
-        className="bottom-0 left-0 h-12 w-[38px] rounded-br-[36px] rounded-bl-[36px]"
+        className="bottom-0 left-0 h-[48px] w-[38px] rounded-br-[36px] rounded-bl-[36px]"
         onClick={() => onClick?.("down")}
       />
       {/* Center piece to fill the gap */}
-      <div className="absolute top-11 left-0 h-[42px] w-[38px] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[inset_0_0_0_1px_var(--gb-ui-inset),inset_0_20px_4px_1px_#ffffff]" />
+      <div className="absolute top-[44px] left-0 h-[42px] w-[38px] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[inset_0_0_0_1px_var(--gb-ui-inset),_inset_0_20px_4px_1px_#ffffff]" />
     </div>
   );
 };
@@ -186,9 +186,9 @@ const ActionButton = ({ className, label, onClick }: ActionButtonProps) => {
       key={label}
       onClick={handleClick}
       className={cn(
-        `after:w-inherit after:h-inherit after:rounded-inherit absolute size-14 cursor-pointer rounded-full border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),inset_0_3px_4px_1px_#fff]  transition-all duration-150 before:absolute before:inset-0 before:m-auto before:block before:size-[30px] before:items-center before:justify-center before:rounded-[30px] before:bg-[rgba(255,255,255,0.9)] before:text-center before:indent-1px before:text-[23px] before:leading-[30px] before:font-normal before:text-(--gb-ui-text) after:absolute after:top-px after:left-px after:border after:border-[rgba(255,255,255,0)] after:shadow-[inset_10px_60px_2px_-40px_rgba(255,255,255,0.36)] after:content-[''] active:scale-90 active:brightness-110`,
+        `after:w-inherit after:h-inherit after:rounded-inherit absolute size-[56px] cursor-pointer rounded-full border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),_2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),_inset_0_3px_4px_1px_#fff] transition-all duration-150 before:absolute before:inset-0 before:m-auto before:block before:size-[30px] before:items-center before:justify-center before:rounded-[30px] before:bg-[rgba(255,255,255,0.9)] before:text-center before:indent-[1px] before:text-[23px] before:leading-[30px] before:font-[400] before:text-[var(--gb-ui-text)] after:absolute after:top-[-1px] after:left-[-1px] after:border after:border-[rgba(255,255,255,0)] after:shadow-[inset_10px_60px_2px_-40px_rgba(255,255,255,0.36)] after:content-[''] active:scale-90 active:brightness-110`,
 
-        label === "A" ? "before: content-['A']" : "before: content-['B']",
+        label === "A" ? "before:!content-['A']" : "before:!content-['B']",
 
         className
       )}
@@ -216,7 +216,7 @@ const Speaker = ({ animate = false }: { animate?: boolean }) => {
   return (
     <div className="absolute top-28 right-4 z-10 h-[88px] w-[22px] rounded-[10px] border border-transparent bg-[radial-gradient(circle,var(--gb-speaker-light)_0%,var(--gb-speaker-dark)_100%)] shadow-[inset_0_0_0_1px_rgba(130,97,42,0),inset_0_0_8px_1px_rgba(0,0,0,0.6)]">
       <motion.div
-        className="absolute top-1 right-0 left-0 m-auto h-1 w-1 rounded-full bg-(--gb-speaker-hole) shadow-[0_5px_0_0_var(--gb-speaker-hole),0_10px_0_0_var(--gb-speaker-hole),0_15px_0_0_var(--gb-speaker-hole),0_20px_0_0_var(--gb-speaker-hole),0_25px_0_0_var(--gb-speaker-hole),0_30px_0_0_var(--gb-speaker-hole),0_35px_0_0_var(--gb-speaker-hole),0_40px_0_0_var(--gb-speaker-hole),0_45px_0_0_var(--gb-speaker-hole),0_50px_0_0_var(--gb-speaker-hole),0_55px_0_0_var(--gb-speaker-hole),0_60px_0_0_var(--gb-speaker-hole),0_65px_0_0_var(--gb-speaker-hole),0_70px_0_0_var(--gb-speaker-hole),0_75px_0_0_var(--gb-speaker-hole),-5px_2.5px_0_0_var(--gb-speaker-hole),-5px_7.5px_0_0_var(--gb-speaker-hole),-5px_12.5px_0_0_var(--gb-speaker-hole),-5px_17.5px_0_0_var(--gb-speaker-hole),-5px_22.5px_0_0_var(--gb-speaker-hole),-5px_27.5px_0_0_var(--gb-speaker-hole),-5px_32.5px_0_0_var(--gb-speaker-hole),-5px_37.5px_0_0_var(--gb-speaker-hole),-5px_42.5px_0_0_var(--gb-speaker-hole),-5px_47.5px_0_0_var(--gb-speaker-hole),-5px_52.5px_0_0_var(--gb-speaker-hole),-5px_57.5px_0_0_var(--gb-speaker-hole),-5px_62.5px_0_0_var(--gb-speaker-hole),-5px_67.5px_0_0_var(--gb-speaker-hole),-5px_72.5px_0_0_var(--gb-speaker-hole),5px_2.5px_0_0_var(--gb-speaker-hole),5px_7.5px_0_0_var(--gb-speaker-hole),5px_12.5px_0_0_var(--gb-speaker-hole),5px_17.5px_0_0_var(--gb-speaker-hole),5px_22.5px_0_0_var(--gb-speaker-hole),5px_27.5px_0_0_var(--gb-speaker-hole),5px_32.5px_0_0_var(--gb-speaker-hole),5px_37.5px_0_0_var(--gb-speaker-hole),5px_42.5px_0_0_var(--gb-speaker-hole),5px_47.5px_0_0_var(--gb-speaker-hole),5px_52.5px_0_0_var(--gb-speaker-hole),5px_57.5px_0_0_var(--gb-speaker-hole),5px_62.5px_0_0_var(--gb-speaker-hole),5px_67.5px_0_0_var(--gb-speaker-hole),5px_72.5px_0_0_var(--gb-speaker-hole)]"
+        className="absolute top-[4px] right-0 left-0 m-auto h-[4px] w-[4px] rounded-full bg-[var(--gb-speaker-hole)] shadow-[0_5px_0_0_var(--gb-speaker-hole),0_10px_0_0_var(--gb-speaker-hole),0_15px_0_0_var(--gb-speaker-hole),0_20px_0_0_var(--gb-speaker-hole),0_25px_0_0_var(--gb-speaker-hole),0_30px_0_0_var(--gb-speaker-hole),0_35px_0_0_var(--gb-speaker-hole),0_40px_0_0_var(--gb-speaker-hole),0_45px_0_0_var(--gb-speaker-hole),0_50px_0_0_var(--gb-speaker-hole),0_55px_0_0_var(--gb-speaker-hole),0_60px_0_0_var(--gb-speaker-hole),0_65px_0_0_var(--gb-speaker-hole),0_70px_0_0_var(--gb-speaker-hole),0_75px_0_0_var(--gb-speaker-hole),-5px_2.5px_0_0_var(--gb-speaker-hole),-5px_7.5px_0_0_var(--gb-speaker-hole),-5px_12.5px_0_0_var(--gb-speaker-hole),-5px_17.5px_0_0_var(--gb-speaker-hole),-5px_22.5px_0_0_var(--gb-speaker-hole),-5px_27.5px_0_0_var(--gb-speaker-hole),-5px_32.5px_0_0_var(--gb-speaker-hole),-5px_37.5px_0_0_var(--gb-speaker-hole),-5px_42.5px_0_0_var(--gb-speaker-hole),-5px_47.5px_0_0_var(--gb-speaker-hole),-5px_52.5px_0_0_var(--gb-speaker-hole),-5px_57.5px_0_0_var(--gb-speaker-hole),-5px_62.5px_0_0_var(--gb-speaker-hole),-5px_67.5px_0_0_var(--gb-speaker-hole),-5px_72.5px_0_0_var(--gb-speaker-hole),5px_2.5px_0_0_var(--gb-speaker-hole),5px_7.5px_0_0_var(--gb-speaker-hole),5px_12.5px_0_0_var(--gb-speaker-hole),5px_17.5px_0_0_var(--gb-speaker-hole),5px_22.5px_0_0_var(--gb-speaker-hole),5px_27.5px_0_0_var(--gb-speaker-hole),5px_32.5px_0_0_var(--gb-speaker-hole),5px_37.5px_0_0_var(--gb-speaker-hole),5px_42.5px_0_0_var(--gb-speaker-hole),5px_47.5px_0_0_var(--gb-speaker-hole),5px_52.5px_0_0_var(--gb-speaker-hole),5px_57.5px_0_0_var(--gb-speaker-hole),5px_62.5px_0_0_var(--gb-speaker-hole),5px_67.5px_0_0_var(--gb-speaker-hole),5px_72.5px_0_0_var(--gb-speaker-hole)]"
         variants={holesVariants as any}
         initial="idle"
         animate={animate ? "animating" : "idle"}
@@ -268,12 +268,11 @@ const PlaydateConsole = ({
   const PowerButton = (
     <button
       onClick={handlePowerClick}
-      className={`after:w-inherit after:h-inherit after:rounded-inherit absolute top-14 right-2.5 z-30 flex size-9 cursor-pointer items-center justify-center rounded-full border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),inset_0_3px_4px_1px_#fff]  transition-all duration-150 active:scale-90 active:brightness-110`}
+      className={`after:w-inherit after:h-inherit after:rounded-inherit absolute top-14 right-2.5 z-30 flex size-[36px] cursor-pointer items-center justify-center rounded-full border border-[rgba(255,255,255,0)] bg-[linear-gradient(270deg,var(--gb-ui-dark)_0%,var(--gb-ui-mid)_30%,var(--gb-ui-mid)_70%,var(--gb-ui-dark)_100%)] shadow-[0_0_2px_0_var(--gb-ui-shadow-1),0_0_4px_1px_var(--gb-ui-shadow-2),_2px_4px_10px_4px_var(--gb-ui-shadow-3),inset_0_0_0_1px_var(--gb-ui-inset),_inset_0_3px_4px_1px_#fff] transition-all duration-150 active:scale-90 active:brightness-110`}
     >
       <Power className="h-5 w-5 text-red-500" />
     </button>
   );
-
 
   const flicker = {
     off: { opacity: 0 },
@@ -347,7 +346,7 @@ const PlaydateConsole = ({
 
       {/* Main Console */}
       <div
-        className="relative z-10 h-[510px] w-[492px] rounded-3xl shadow-2xl select-none before:absolute before:-top-1.5 before:right-16 before:z-25 before:h-1.5 before:w-14 before:rounded-t-[6px] before:shadow-[inset_5px_1px_2px_1px_rgba(255,255,255,0.7),inset_-5px_1px_2px_1px_rgba(255,255,255,0.7)] max-md:w-[442px] max-sm:w-[350px]"
+        className="relative z-10 h-[510px] w-[492px] rounded-3xl shadow-2xl select-none before:absolute before:-top-1.5 before:right-16 before:z-[25] before:h-1.5 before:w-14 before:rounded-t-[6px] before:shadow-[inset_5px_1px_2px_1px_rgba(255,255,255,0.7),inset_-5px_1px_2px_1px_rgba(255,255,255,0.7)] max-md:w-[442px] max-sm:w-[350px]"
         style={
           {
             ...theme,
@@ -356,7 +355,7 @@ const PlaydateConsole = ({
         }
       >
         <div
-          className="absolute -top-1.5 right-16 z-25 h-1.5 w-14 rounded-t-[6px]"
+          className="absolute -top-1.5 right-16 z-[25] h-1.5 w-14 rounded-t-[6px]"
           style={{
             background: `var(--gb-slot-color)`,
             boxShadow: `var(--gb-slot-shadow), inset 5px 1px 2px 1px rgba(255,255,255,0.7), inset -5px 1px 2px 1px rgba(255,255,255,0.7)`,
@@ -371,13 +370,13 @@ const PlaydateConsole = ({
         />
 
         {/* Main Content */}
-        <ScrewPost className="bottom-0! left-0! rounded-bl-[50%]" />
-        <ScrewPost className="right-0! bottom-0! rounded-br-[50%]" />
+        <ScrewPost className="!bottom-0 !left-0 rounded-bl-[50%]" />
+        <ScrewPost className="!right-0 !bottom-0 rounded-br-[50%]" />
         <ScrewPost className="top-0 right-0 rounded-tr-[50%] max-sm:hidden" />
 
         <div className="relative z-50 size-full rounded-[inherit] p-2.5">
           <DPad
-            className="bottom-[54px] left-[97px] max-sm:bottom-[60px] max-sm:left-20"
+            className="bottom-[54px] left-[97px] max-sm:bottom-[60px] max-sm:left-[80px]"
             onClick={onDpadButtonClick}
           />
           <ActionButton
@@ -393,9 +392,9 @@ const PlaydateConsole = ({
 
           {/* Screen/bezel */}
           <div className="inline-flex h-1/2 w-full items-center justify-center">
-            <div className="h-full flex-1 overflow-hidden rounded-2xl border-2 border-(--gb-bezel) bg-(--gb-bezel)">
-              <div className="size-full overflow-hidden rounded-[inherit] bg-linear-to-r from-(--gb-bezel) to-(--gb-bezel-light) p-3">
-                <motion.div className="relative size-full overflow-hidden bg-(--gb-bezel)">
+            <div className="h-full flex-1 overflow-hidden rounded-2xl border-2 border-[var(--gb-bezel)] bg-[var(--gb-bezel)]">
+              <div className="size-full overflow-hidden rounded-[inherit] bg-gradient-to-r from-[var(--gb-bezel)] to-[var(--gb-bezel-light)] p-3">
+                <motion.div className="relative size-full overflow-hidden bg-[var(--gb-bezel)]">
                   {/* Screen content  */}
                   <AnimatePresence>
                     {isPowerOn && (

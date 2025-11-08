@@ -153,7 +153,7 @@ const MainScreen: React.FC<{
         bg="transparent"
       >
         {selectedItem === "music" ? (
-          "Hm..? Play a music?"
+          "Play a music?"
         ) : selectedItem === "game" ? (
           "Play snake game!"
         ) : (

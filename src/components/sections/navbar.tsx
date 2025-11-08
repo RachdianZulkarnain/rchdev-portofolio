@@ -11,7 +11,6 @@ import { Logo } from "../ui/logo";
 
 const NAV_LINKS = [
   { id: "home", label: "Home" },
-  // { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "statsistics", label: "Statsistics" },
   { id: "contact", label: "Contact" },
@@ -79,7 +78,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full border-b px-4 py-2.5 md:px-8" id="home">
+    <nav className="sticky top-0 z-50 w-full border-b px-4 py-2.5 md:px-8 bg-background/50 backdrop-blur-sm" id="hero">
       <div className="flex items-center justify-between gap-4">
         <a
           href="/"
