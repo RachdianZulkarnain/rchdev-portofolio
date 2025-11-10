@@ -49,7 +49,7 @@ const Projects = () => {
       ],
       github: "https://github.com/RachdianZulkarnain/pradian-app-web",
       image: "/projects/Pradian.jpg",
-      live: null,
+      live: "https://pradian-event.vercel.app",
       date: "Aug, 2025",
       status: "completed",
     },
