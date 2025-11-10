@@ -1,8 +1,9 @@
 
-# Rachdian Portfolio
+# Rchdev Portfolio
 
 ![Portfolio Screenshot](public/projects/screenshoot.png)
 
+A modern, interactive **[developer portfolio](https://rachdian.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
 
 > This portfolio showcases my work, my projects, and my personality
 
@@ -59,7 +60,7 @@ npx prisma generate
 npm run dev
 ```
 
-> Your portfolio should now be live at **[http://localhost:3000](http://localhost:3000)** 🎉
+> Your portfolio should now be live at **[http://localhost:3000]** 🎉
 
 ---
 
