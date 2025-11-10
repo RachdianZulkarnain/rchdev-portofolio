@@ -9,7 +9,10 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div id="home" className="relative flex flex-col justify-center overflow-hidden border-b pt-12">
+    <div
+      id="home"
+      className="relative flex flex-col justify-center overflow-hidden border-b pt-12"
+    >
       <div className="px-4 pb-6 md:px-8 md:pb-14 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -115,7 +118,7 @@ const Hero = () => {
               >
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1L-oBSiQbQVfuHhaS99fHtSj-wSgnc4gu/view?usp=drive_link"
+                    "https://drive.google.com/file/d/1uEtX4caaFOm5t_U8qpnsBhJYW2U_WDlh/view?usp=drive_link"
                   }
                 >
                   <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
