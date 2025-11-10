@@ -3,7 +3,7 @@
 
 ![Portfolio Screenshot](public/projects/screenshoot.png)
 
-A modern, interactive **[developer portfolio](https://rachdian.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
+A modern, interactive **[Rachdian portfolio](https://rachdian.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
 
 > This portfolio showcases my work, my projects, and my personality
 
