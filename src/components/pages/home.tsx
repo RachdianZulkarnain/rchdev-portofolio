@@ -16,7 +16,7 @@ import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { BackgroundNoise } from "../backgrounds";
 import { IntroSplash } from "../intro-splash";
 import { ThemeToggleButton2 } from "../theme-toggle";
@@ -40,7 +40,7 @@ const SnakeGame = dynamic(() => import("@/components/snake-game"), {
 });
 
 const MotionLink = motion.create(Link);
-const menuItems = ["portfolio", "game", "music"] as const;
+const menuItems = ["portofolio", "game", "music"] as const;
 type MenuItem = (typeof menuItems)[number];
 type ConsoleNavigation = "main" | "music" | "play" | "portfolio";
 
@@ -120,7 +120,7 @@ const socialLinks = [
 ];
 
 const bgImages: Record<MenuItem, string> = {
-  portfolio: "/portofolio.png",
+  portofolio: "/portofolio.png",
   game: "/game.png",
   music: "/music.png",
 };
@@ -225,9 +225,10 @@ const MainScreen: React.FC<{
 const HomePage = () => {
   const [currentConsoleNavigation, setCurrentConsoleNavigation] =
     useState<ConsoleNavigation>("main");
-  const [selectedItem, setSelectedItem] = useState<MenuItem>("portfolio");
+  const [selectedItem, setSelectedItem] = useState<MenuItem>("portofolio");
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [song, setSong] = useState<Song | null>(null);
+  const [dateTime, setDateTime] = useState("");
 
   const snakeRef = useRef<SnakeGameHandle | null>(null);
   const consoleRef = useRef<HTMLDivElement | null>(null);
@@ -236,6 +237,24 @@ const HomePage = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const screenSize = useScreenSize();
   const router = useRouter();
+
+  // 🕒 Clock effect
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      const weekday = now.toLocaleDateString([], { weekday: "short" });
+      const day = now.getDate();
+      const month = now.toLocaleDateString([], { month: "short" });
+      const hour = now.getHours();
+      const minute = now.getMinutes().toString().padStart(2, "0");
+      const period = hour >= 12 ? "PM" : "AM";
+      const hour12 = hour % 12 || 12;
+      setDateTime(`${weekday} ${day} ${month} ${hour12}:${minute}${period}`);
+    };
+    updateClock();
+    const timer = setInterval(updateClock, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const { data: musicPlaylist } = useQuery<Song[]>({
     queryKey: ["music-playlist"],
@@ -344,7 +363,7 @@ const HomePage = () => {
         const navigationActions: Record<MenuItem, () => void> = {
           music: () => setCurrentConsoleNavigation("music"),
           game: () => setCurrentConsoleNavigation("play"),
-          portfolio: () => {
+          portofolio: () => {
             router.push("/portofolio");
           },
         };
@@ -426,23 +445,24 @@ const HomePage = () => {
           transition={{ delay: 0.2 }}
         >
           {isClient && (
-            <button
-              onClick={() =>
-                setTheme(resolvedTheme === "dark" ? "light" : "dark")
-              }
-              className="bg-background border-border/15 dark:hover:border-border inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset] backdrop-blur-sm transition-all duration-300 hover:border-zinc-900/30 max-sm:rounded-lg max-sm:p-2 md:px-3"
-              style={{
-                backgroundImage:
-                  "linear-gradient(135deg, rgba(255,255,255,0.08), transparent)",
-              }}
-              aria-label="Toggle theme"
-            >
-              <ThemeToggleButton2
-                className="w-3.5"
-                theme={(resolvedTheme as "light" | "dark") || "light"}
-              />
-            </button>
-            
+            <>
+              <button
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
+                className="bg-background border-border/15 dark:hover:border-border inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset] backdrop-blur-sm transition-all duration-300 hover:border-zinc-900/30 max-sm:rounded-lg max-sm:p-2 md:px-3"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, rgba(255,255,255,0.08), transparent)",
+                }}
+                aria-label="Toggle theme"
+              >
+                <ThemeToggleButton2
+                  className="w-3.5"
+                  theme={(resolvedTheme as "light" | "dark") || "light"}
+                />
+              </button>
+            </>
           )}
         </motion.div>
       </nav>
@@ -564,6 +584,10 @@ const HomePage = () => {
           ))}
         </div>
       </motion.div>
+      {/* 🕒 Real-time clock */}
+      <span className="absolute right-4 bottom-3 z-50 md:bottom-5">
+        {dateTime}
+      </span>
     </main>
   );
 };
