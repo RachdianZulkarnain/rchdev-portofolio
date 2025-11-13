@@ -100,7 +100,7 @@ export const Bootloader = ({
           {mounted && (
             <Image
               src={logoPath}
-              alt="FocusBrew"
+              alt="Rachdian Logo"
               width={128}
               height={128}
               style={{ objectFit: "contain" }}
@@ -134,7 +134,7 @@ export const Bootloader = ({
             ease: "easeInOut",
           }}
         >
-          Welcome To Rachdian Portofolio
+          Loading . . .
         </motion.p>
       </motion.div>
     </motion.div>

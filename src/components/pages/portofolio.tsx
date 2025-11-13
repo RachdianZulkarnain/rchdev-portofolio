@@ -1,16 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import Navbar from "../sections/navbar";
-import Footer from "../sections/footer";
-import About from "../sections/about";
-import Hero from "../sections/hero";
-import Projects from "../sections/projects";
+import { useState } from "react";
 import { BackgroundNoise } from "../backgrounds";
-import Contact from "../sections/contact";
-import Stats from "../sections/github-stats";
 import { Bootloader } from "../Bootloader";
+import Contact from "../sections/contact";
+import Footer from "../sections/footer";
+import Stats from "../sections/github-stats";
+import Hero from "../sections/hero";
+import Navbar from "../sections/navbar";
+import Projects from "../sections/projects";
 
 const PortfolioPage = () => {
   const [isBooting, setIsBooting] = useState(true);

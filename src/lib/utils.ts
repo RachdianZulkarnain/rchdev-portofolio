@@ -34,3 +34,24 @@ export const parseMessageWithMentions = (content: string) => {
 
 export const getStartValue = (value?: number) =>
   value && value > 50 ? value - 50 : 0;
+
+export function trackEvent(
+  eventName: string,
+  eventParams?: Record<string, any>
+): void {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", eventName, eventParams);
+  }
+}
+
+export function isMac(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return navigator.platform.toLowerCase().includes("mac");
+}
+export function getModifierKey(): string {
+  return isMac() ? "⌘" : "Ctrl";
+}
+
+export function formatShortcut(key: string): string {
+  return `${getModifierKey()}+${key}`;
+}

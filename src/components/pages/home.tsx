@@ -10,13 +10,19 @@ import { useQuery } from "@tanstack/react-query";
 import { useIsClient } from "@uidotdev/usehooks";
 import axios from "axios";
 import chunk from "lodash/chunk";
-import { Github, Linkedin } from "lucide-react";
+import { Focus, Github, Linkedin } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { BackgroundNoise } from "../backgrounds";
 import { IntroSplash } from "../intro-splash";
 import { ThemeToggleButton2 } from "../theme-toggle";
@@ -41,9 +47,9 @@ const SnakeGame = dynamic(() => import("@/components/snake-game"), {
 });
 
 const MotionLink = motion.create(Link);
-const menuItems = ["portofolio", "game", "music"] as const;
+const menuItems = ["portofolio", "game", "music", "focus"] as const;
 type MenuItem = (typeof menuItems)[number];
-type ConsoleNavigation = "main" | "music" | "play" | "portfolio";
+type ConsoleNavigation = "main" | "music" | "play" | "portfolio" | "focus";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -124,6 +130,7 @@ const bgImages: Record<MenuItem, string> = {
   portofolio: "/portofolio.png",
   game: "/game.png",
   music: "/music.png",
+  focus: "/focus.png",
 };
 
 const MainScreen: React.FC<{
@@ -157,6 +164,8 @@ const MainScreen: React.FC<{
           "Play a music?"
         ) : selectedItem === "game" ? (
           "Play snake game!"
+        ) : selectedItem === "focus" ? (
+          "Study with me!"
         ) : (
           <>
             Hi! , I am{" "}
@@ -239,7 +248,6 @@ const HomePage = () => {
   const screenSize = useScreenSize();
   const router = useRouter();
 
-  // 🕒 Clock effect
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
@@ -364,6 +372,7 @@ const HomePage = () => {
         const navigationActions: Record<MenuItem, () => void> = {
           music: () => setCurrentConsoleNavigation("music"),
           game: () => setCurrentConsoleNavigation("play"),
+          focus: () => router.push("/focus"),
           portofolio: () => {
             router.push("/portofolio");
           },
@@ -400,6 +409,7 @@ const HomePage = () => {
       ),
       play: <SnakeGame ref={snakeRef} className="absolute inset-0" />,
       portfolio: <IntroSplash />,
+      focus: <Focus/>,
       main: (
         <MainScreen
           selectedItem={selectedItem}
@@ -585,12 +595,11 @@ const HomePage = () => {
           ))}
         </div>
       </motion.div>
-      {/* 🕒 Real-time clock */}
       <span className="absolute right-4 bottom-3 z-50 md:bottom-5">
         {dateTime}
       </span>
       <span className="absolute right-42 bottom-3.5 z-50 md:bottom-5.5">
-      <Weather  />
+        <Weather />
       </span>
     </main>
   );
