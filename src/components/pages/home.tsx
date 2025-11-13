@@ -26,6 +26,7 @@ import PlaydateConsole, {
 } from "../ui/playdate-console";
 import SpeechBubble from "../ui/speech-bubble";
 import { Typewriter } from "../ui/typewriter";
+import { Weather } from "../weather";
 
 const Particles = dynamic(() => import("@/components/ui/particles"), {
   ssr: false,
@@ -587,6 +588,9 @@ const HomePage = () => {
       {/* 🕒 Real-time clock */}
       <span className="absolute right-4 bottom-3 z-50 md:bottom-5">
         {dateTime}
+      </span>
+      <span className="absolute right-42 bottom-3.5 z-50 md:bottom-5.5">
+      <Weather  />
       </span>
     </main>
   );
