@@ -118,7 +118,7 @@ const Hero = () => {
               >
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1uEtX4caaFOm5t_U8qpnsBhJYW2U_WDlh/view?usp=drive_link"
+                    "https://drive.google.com/file/d/1R1NaIiUw58AHLyu-CKolWbbCXC50GsHz/view?usp=drive_link"
                   }
                 >
                   <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
