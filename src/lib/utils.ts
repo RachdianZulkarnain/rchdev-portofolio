@@ -5,14 +5,17 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Returns a random element from an array
 export const getRandomElement = <T>(arr: T[]): T => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
+// Sleep for a given number of milliseconds
 export const sleep = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
 export const parseMessageWithMentions = (content: string) => {
+  // Regex to match @username (alphanumeric + underscore)
   const mentionRegex = /(@\w+)/g;
   const parts = content.split(mentionRegex);
 
@@ -34,24 +37,3 @@ export const parseMessageWithMentions = (content: string) => {
 
 export const getStartValue = (value?: number) =>
   value && value > 50 ? value - 50 : 0;
-
-export function trackEvent(
-  eventName: string,
-  eventParams?: Record<string, any>
-): void {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", eventName, eventParams);
-  }
-}
-
-export function isMac(): boolean {
-  if (typeof navigator === "undefined") return false;
-  return navigator.platform.toLowerCase().includes("mac");
-}
-export function getModifierKey(): string {
-  return isMac() ? "⌘" : "Ctrl";
-}
-
-export function formatShortcut(key: string): string {
-  return `${getModifierKey()}+${key}`;
-}
