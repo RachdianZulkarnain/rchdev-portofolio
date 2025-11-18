@@ -5,39 +5,6 @@
 
 A modern, interactive **[Rachdian portfolio](https://rachdian.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
 
-# Rchdev Focus
-
-![Focus Screenshot](public/projects/sc2.png)
-
-## About
-Focus is a comprehensive productivity suite designed to help you stay focused, organized, and efficient. It combines multiple productivity tools in one elegant interface.
-
-## ✨ Features
-
-- **Pomodoro Timer**: Boost your productivity with customizable work/break intervals
-- **Ambient Sounds**: Enhance focus with a variety of ambient sounds from nature, urban environments, and more
-- **Todo App**: Keep track of your tasks in a simple, intuitive interface
-- **Habit Tracker**: Build and maintain positive habits with visual tracking
-- **Notepad**: Jot down quick notes and thoughts
-- **Kanban Board**: Organize your workflow visually
-- **YouTube Player**: Watch educational content without distractions
-- **Weather Forecast**: Check current weather conditions and forecasts
-- **Currency Exchange**: Convert between different currencies with up-to-date exchange rates
-
-## 🌟 Usage
-
-Focus is designed to be intuitive and easy to use:
-
-1. **Start a Pomodoro Session**: Set your timer and get to work
-2. **Play Ambient Sounds**: Choose from various categories of sounds to create your perfect focus environment
-3. **Manage Tasks**: Add, update, and track your tasks with the Todo App
-4. **Take Notes**: Use the Notepad to capture your ideas
-5. **Track Habits**: Build consistency with the Habit Tracker
-6. **Organize Projects**: Use the Kanban board to visualize your workflow
-7. **Watch Educational Content**: Use the distraction-free YouTube player
-8. **Check Weather**: View current weather conditions and forecasts
-9. **Convert Currencies**: Use the Currency Exchange to convert between different currencies
-
 > This portfolio showcases my work, my projects, and my personality
 
 ---

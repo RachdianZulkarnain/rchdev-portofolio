@@ -1,28 +1,32 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
+import {
+  Cloud,
+  CloudRain,
+  Sun,
+  Snowflake,
+  CloudFog,
+  Loader2,
+  AlertCircle,
+  MapPin,
+  Thermometer,
+  Droplets,
+} from "lucide-react";
+import { useLocalStorage } from "@/hooks/use-local-storage";
+import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
+} from "./ui/tooltip";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useLocalStorage } from "@/hooks/use-local-storage";
-import {
-  AlertCircle,
-  Cloud,
-  CloudFog,
-  CloudRain,
-  Droplets,
-  Loader2,
-  MapPin,
-  Snowflake,
-  Sun,
-  Thermometer,
-} from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  TooltipProvider
-} from "./ui/tooltip";
+import { Button } from "@/components/ui/button";
 
 // Types
 interface WeatherData {
@@ -63,7 +67,7 @@ const REFRESH_INTERVAL = 30 * 60 * 1000; // 30 minutes
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
 const ERROR_RETRY_DELAY = 5000; // 5 seconds
 const MAX_RETRIES = 3;
-const DEFAULT_CITY = "London";
+const DEFAULT_CITY = "Jakarta";
 const GEOLOCATION_OPTIONS = {
   timeout: 5000,
   maximumAge: 10 * 60 * 1000, // 10 minutes
@@ -266,9 +270,7 @@ export function Weather() {
 
         const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
         if (!apiKey) {
-          setError(
-            "Weather API key not found. Please add a valid OpenWeather API key in your environment variables."
-          );
+          setError("Weather API key not found. Please add a valid OpenWeather API key in your environment variables.");
           setLoading(false);
           lockRef.current = false;
           return;

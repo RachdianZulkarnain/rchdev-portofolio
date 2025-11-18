@@ -10,7 +10,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useIsClient } from "@uidotdev/usehooks";
 import axios from "axios";
 import chunk from "lodash/chunk";
-import { Focus, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
@@ -47,9 +47,9 @@ const SnakeGame = dynamic(() => import("@/components/snake-game"), {
 });
 
 const MotionLink = motion.create(Link);
-const menuItems = ["portofolio", "game", "music", "focus"] as const;
+const menuItems = ["portofolio", "game", "music"] as const;
 type MenuItem = (typeof menuItems)[number];
-type ConsoleNavigation = "main" | "music" | "play" | "portfolio" | "focus";
+type ConsoleNavigation = "main" | "music" | "play" | "portfolio" ;
 
 const containerVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -130,7 +130,6 @@ const bgImages: Record<MenuItem, string> = {
   portofolio: "/portofolio.png",
   game: "/game.png",
   music: "/music.png",
-  focus: "/focus.png",
 };
 
 const MainScreen: React.FC<{
@@ -164,8 +163,6 @@ const MainScreen: React.FC<{
           "Play a music?"
         ) : selectedItem === "game" ? (
           "Play snake game!"
-        ) : selectedItem === "focus" ? (
-          "Study with me!"
         ) : (
           <>
             Hi! , I am{" "}
@@ -372,7 +369,6 @@ const HomePage = () => {
         const navigationActions: Record<MenuItem, () => void> = {
           music: () => setCurrentConsoleNavigation("music"),
           game: () => setCurrentConsoleNavigation("play"),
-          focus: () => router.push("/focus"),
           portofolio: () => {
             router.push("/portofolio");
           },
@@ -409,7 +405,6 @@ const HomePage = () => {
       ),
       play: <SnakeGame ref={snakeRef} className="absolute inset-0" />,
       portfolio: <IntroSplash />,
-      focus: <Focus/>,
       main: (
         <MainScreen
           selectedItem={selectedItem}
