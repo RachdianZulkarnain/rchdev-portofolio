@@ -55,12 +55,6 @@ npm install
 
 Create a `.env` & copy the variables from `.env.example` file in the root and configure it.
 
-### Generate Prisma Client
-
-```bash
-npx prisma generate
-```
-
 ### Run the development server
 
 ```bash
