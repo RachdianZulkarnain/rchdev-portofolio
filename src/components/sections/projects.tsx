@@ -12,6 +12,25 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
+      title: "Rchdev - Personal Portfolio",
+      description:
+        "My personal portofolio website showcasing my skills and projects",
+      tags: [
+        "Next.js",
+        "Shadcn UI",
+        "Tailwind CSS",
+        "Typescript",
+        "lucide-react",
+        "Framer Motion",
+        "PostgreSQL",
+      ],
+      github: "https://github.com/RachdianZulkarnain/rchdev-portofolio",
+      image: "/projects/sc.png",
+      live: "https://rachdian.vercel.app/",
+      date: "Nov, 2025",
+      status: "completed",
+    },
+    {
       title: "Homigo - Property Renting App",
       description:
         "Homigo is a property rental platform that simplifies finding and booking apartments, hotels, and villas. It offers secure payment integration and an intuitive interface for a seamless user experience.",
@@ -27,7 +46,7 @@ const Projects = () => {
         "Redis",
       ],
       github: "https://github.com/RachdianZulkarnain/final-project-web",
-      image: "/projects/Homigo.jpg",
+      image: "/projects/Homigo.png",
       live: "https://homigo-property.vercel.app",
       date: "Sep, 2025",
       status: "completed",
@@ -48,13 +67,13 @@ const Projects = () => {
         "Redis",
       ],
       github: "https://github.com/RachdianZulkarnain/pradian-app-web",
-      image: "/projects/Pradian.jpg",
+      image: "/projects/Pradian.png",
       live: "https://pradian-event.vercel.app",
       date: "Aug, 2025",
       status: "completed",
     },
     {
-      title: "Company Profile",
+      title: "Microlab Studio",
       description:
         "Microlab Studio is a 3D printing service that transforms digital designs into real products with precision and speed. It offers a wide range of materials, professional prototyping, and custom manufacturing solutions to support innovation across industries.",
       tags: [
@@ -65,7 +84,7 @@ const Projects = () => {
         "Shadcn UI",
       ],
       github: "https://github.com/RachdianZulkarnain/Company-Profile",
-      image: "/projects/Company Profile.jpg",
+      image: "/projects/microlab.png",
       live: "https://microlab-studio.vercel.app/",
       date: "Jul, 2025",
       status: "completed",
