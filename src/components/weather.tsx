@@ -1,32 +1,28 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo, useRef } from "react";
-import {
-  Cloud,
-  CloudRain,
-  Sun,
-  Snowflake,
-  CloudFog,
-  Loader2,
-  AlertCircle,
-  MapPin,
-  Thermometer,
-  Droplets,
-} from "lucide-react";
-import { useLocalStorage } from "@/hooks/use-local-storage";
-import { cn } from "@/lib/utils";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "./ui/tooltip";
+import { Button } from "@/components/ui/button";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+import { useLocalStorage } from "@/hooks/use-local-storage";
+import {
+  AlertCircle,
+  Cloud,
+  CloudFog,
+  CloudRain,
+  Droplets,
+  Loader2,
+  MapPin,
+  Snowflake,
+  Sun,
+  Thermometer,
+} from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  TooltipProvider
+} from "./ui/tooltip";
 
 // Types
 interface WeatherData {
@@ -270,7 +266,9 @@ export function Weather() {
 
         const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
         if (!apiKey) {
-          setError("Weather API key not found. Please add a valid OpenWeather API key in your environment variables.");
+          setError(
+            "Weather API key not found. Please add a valid OpenWeather API key in your environment variables."
+          );
           setLoading(false);
           lockRef.current = false;
           return;

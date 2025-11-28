@@ -49,7 +49,7 @@ const SnakeGame = dynamic(() => import("@/components/snake-game"), {
 const MotionLink = motion.create(Link);
 const menuItems = ["portofolio", "game", "music"] as const;
 type MenuItem = (typeof menuItems)[number];
-type ConsoleNavigation = "main" | "music" | "play" | "portfolio" ;
+type ConsoleNavigation = "main" | "music" | "play" | "portfolio";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -338,8 +338,35 @@ const HomePage = () => {
 
   const handleDpadButtonClick = useCallback(
     (action: DpadButtonLabel) => {
+      // PLAY MODE → snake game
       if (currentConsoleNavigation === "play") {
         snakeRef.current?.handleDpad(action);
+        return;
+      }
+
+      // MUSIC MODE → next / prev
+      if (currentConsoleNavigation === "music") {
+        if (!musicPlaylist || musicPlaylist.length === 0) return;
+
+        setSong((prev) => {
+          const index = musicPlaylist.findIndex((s) => s.url === prev?.url);
+
+          if (action === "left") {
+            // PREV SONG
+            const prevIndex =
+              index - 1 >= 0 ? index - 1 : musicPlaylist.length - 1;
+            return musicPlaylist[prevIndex];
+          }
+
+          if (action === "right") {
+            // NEXT SONG
+            const nextIndex = index + 1 < musicPlaylist.length ? index + 1 : 0;
+            return musicPlaylist[nextIndex];
+          }
+
+          return prev;
+        });
+
         return;
       }
 
@@ -392,7 +419,7 @@ const HomePage = () => {
 
   const renderConsoleScreen = useCallback(() => {
     const screenConfig = {
-      music: song && (
+      music: song && musicPlaylist && (
         <MusicPlayer
           key={song.url}
           isPlaying={isMusicPlaying}
@@ -401,8 +428,22 @@ const HomePage = () => {
           trackTitle={song.title}
           coverImage={song.cover}
           className="absolute inset-0"
+          onNext={() => {
+            const idx = musicPlaylist.findIndex((x) => x.url === song.url);
+            const next = musicPlaylist[(idx + 1) % musicPlaylist.length];
+            setSong(next);
+          }}
+          onPrev={() => {
+            const idx = musicPlaylist.findIndex((x) => x.url === song.url);
+            const prev =
+              musicPlaylist[
+                (idx - 1 + musicPlaylist.length) % musicPlaylist.length
+              ];
+            setSong(prev);
+          }}
         />
       ),
+
       play: <SnakeGame ref={snakeRef} className="absolute inset-0" />,
       portfolio: <IntroSplash />,
       main: (

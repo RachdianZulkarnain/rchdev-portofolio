@@ -28,7 +28,7 @@ const Projects = () => {
       image: "/projects/sc.png",
       live: "https://rachdian.vercel.app/",
       date: "Nov, 2025",
-      status: "completed",
+      status: "In Progress",
     },
     {
       title: "Homigo - Property Renting App",
@@ -49,7 +49,7 @@ const Projects = () => {
       image: "/projects/Homigo.png",
       live: "https://homigo-property.vercel.app",
       date: "Sep, 2025",
-      status: "completed",
+      status: "Not Finished Yet",
     },
     {
       title: "Pradiant Event Management",

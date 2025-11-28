@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, SkipForward, SkipBack } from "lucide-react";
 import ReactPlayer from "react-player";
 
 type MusicPlayerProps = {
@@ -11,6 +11,9 @@ type MusicPlayerProps = {
   artist?: string;
   className?: string;
   isPlaying: boolean;
+
+  onPrev?: () => void;
+  onNext?: () => void;
 };
 
 type AudioOnlyPlayerProps = {
@@ -43,12 +46,14 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
   artist = "Artist Name",
   className,
   isPlaying,
+  onPrev,
+  onNext,
 }) => {
   return (
     <div
       className={cn(
         "relative inset-0 flex h-full w-full items-center justify-center overflow-hidden",
-        className,
+        className
       )}
     >
       <style jsx>
@@ -126,7 +131,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
           }
         `}
       </style>
-     
+
       <div className="absolute inset-0 size-full before:absolute before:inset-0 before:z-10 before:size-full before:bg-black/20 before:backdrop-blur-sm">
         {coverImage && (
           <img
@@ -190,7 +195,19 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             </div>
 
             <button
-              className="flex-center absolute top-1/2 left-1/2 z-50 size-12 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all max-sm:size-10"
+              onClick={onPrev}
+              className="flex-center absolute top-1/2 left-[calc(50%-50px)] z-50 size-10 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 max-sm:size-8"
+              style={{
+                willChange: "transform",
+                transform: "translate3d(-50%, -50%, 0)",
+              }}
+              aria-label="Previous Track"
+            >
+              <SkipBack size={20} />
+            </button>
+
+            <button
+              className="flex-center absolute top-1/2 left-1/2 z-50 size-12 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 max-sm:size-10"
               style={{
                 willChange: "transform",
                 transform: "translate3d(-50%, -50%, 0)",
@@ -220,6 +237,18 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                   </motion.div>
                 )}
               </AnimatePresence>
+            </button>
+
+            <button
+              onClick={onNext}
+              className="flex-center absolute top-1/2 left-[calc(50%+50px)] z-50 size-10 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 max-sm:size-8"
+              style={{
+                willChange: "transform",
+                transform: "translate3d(-50%, -50%, 0)",
+              }}
+              aria-label="Next Track"
+            >
+              <SkipForward size={20} />
             </button>
           </motion.div>
 
@@ -251,7 +280,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
               "rounded-full",
               "bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#0e0e0e_58%,#050505_100%)]",
               "border border-white/10",
-              isPlaying && "playing",
+              isPlaying && "playing"
             )}
             style={{
               transformOrigin: "center",
@@ -263,7 +292,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             <div
               className={cn(
                 "pointer-events-none absolute inset-0 rounded-full opacity-90 mix-blend-overlay",
-                "bg-[repeating-radial-gradient(circle_at_50%_50%,white_1px,white_1px,rgba(0,0,0,0)_2px,rgba(0,0,0,0)_15px)]",
+                "bg-[repeating-radial-gradient(circle_at_50%_50%,white_1px,white_1px,rgba(0,0,0,0)_2px,rgba(0,0,0,0)_15px)]"
               )}
             />
 
@@ -272,7 +301,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                 "glossy-effect pointer-events-none absolute inset-0",
                 "bg-[linear-gradient(105deg,rgba(255,255,255,0.0)_20%,rgba(255,255,255,0.085)_48%,rgba(255,255,255,0.0)_72%)]",
                 "rounded-full",
-                isPlaying && "playing",
+                isPlaying && "playing"
               )}
               style={{
                 transformOrigin: "center",
@@ -285,7 +314,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
                 "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
                 "h-[34%] w-[34%] rounded-full",
                 "bg-[radial-gradient(circle,#ff9b19_0%,#ff7c00_55%,#ff6200_100%)]",
-                "flex items-center justify-center overflow-hidden",
+                "flex items-center justify-center overflow-hidden"
               )}
               style={{
                 boxShadow:
@@ -304,32 +333,10 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
               }}
             />
 
-       
             <div className="absolute inset-0 rounded-full bg-linear-to-br from-white/10 via-transparent to-black/20" />
           </motion.div>
         </motion.div>
       </div>
-
-      <AnimatePresence>
-        {isPlaying && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className="absolute bottom-0 z-40 flex items-center gap-2 max-sm:right-6 sm:left-6"
-          >
-            <div className="absolute flex items-end gap-1">
-              <div className="audio-bar audio-bar-1 w-1 rounded-tl-full rounded-tr-full bg-orange-500" />
-              <div className="audio-bar audio-bar-2 w-1 rounded-tl-full rounded-tr-full bg-orange-500" />
-              <div className="audio-bar audio-bar-3 w-1 rounded-tl-full rounded-tr-full bg-orange-500" />
-            </div>
-            <span className="ml-7 text-xs font-medium text-white/80">
-              Now Playing
-            </span>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <AudioOnlyPlayer isPlaying={isPlaying} url={src} />
     </div>

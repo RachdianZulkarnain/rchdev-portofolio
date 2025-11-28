@@ -6,15 +6,33 @@
     "channel": "Pee Wee Gaskins TV"
   },
   {
-    "url": "https://www.youtube.com/watch?v=lir3dzYIhz0&list=RDlir3dzYIhz0&start_radio=1",
-    "cover": "https://i.pinimg.com/1200x/98/c4/da/98c4da6ad1f2eebd368aa5446f02d534.jpg",
-    "title": "Sleepwalking",
-    "channel": "Bring Me The Horizon"
-  },
-  {
     "url": "https://www.youtube.com/watch?v=lB8ASupNtlw&list=RDlB8ASupNtlw&start_radio=1",
     "cover": "https://img.antaranews.com/cache/1200x800/2025/02/24/Hindia-Doves-_25-Publicity-Photo-01-oleh-Meidiana-Tahir.jpg.webp",
     "title": "everything u are",
     "channel": "Hindia"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=7U20i3bMX10&list=RD7U20i3bMX10&start_radio=1",
+    "cover": "https://i1.sndcdn.com/artworks-bqVmBLvgYFAMiN8C-XRoUJQ-t500x500.jpg",
+    "title": "Rumah ke Rumah",
+    "channel": "Hindia"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=C2AFd1PLsF8&list=RDC2AFd1PLsF8&start_radio=1",
+    "cover": "https://img.antaranews.com/cache/1200x800/2025/02/24/Hindia-Doves-_25-Publicity-Photo-01-oleh-Meidiana-Tahir.jpg.webp",
+    "title": "Berdansalah, Karir Tak Ada Artinya",
+    "channel": "Hindia"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=CtRIsakAgjQ&list=RDCtRIsakAgjQ&start_radio=1",
+    "cover": "https://i.scdn.co/image/ab67616d0000b27339695d4c16489cdf60bef536",
+    "title": "Nina",
+    "channel": "Feast"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=0x-g7hOYgco&list=RD0x-g7hOYgco&start_radio=1",
+    "cover": "https://i.scdn.co/image/ab67616d0000b27339695d4c16489cdf60bef536",
+    "title": "Tarot",
+    "channel": "Feast"
   }
 ]
