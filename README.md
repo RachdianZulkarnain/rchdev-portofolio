@@ -7,6 +7,11 @@ A modern, interactive **[Rachdian portfolio](https://rachdian.vercel.app)** buil
 
 > This portfolio showcases my work, my projects, and my personality
 
+🎮 Inspired by [Playdate Console](https://play.date/) 
+
+This portfolio’s visual style is inspired by the Playdate console—a device known for its bold, iconic yellow color, minimalistic design, and playful interaction style.
+I wanted to bring that same sense of simplicity, creativity, and fun into the UI, resulting in a unique identity that reflects my approach to building digital experiences.
+
 ---
 
 ## Tech Stack

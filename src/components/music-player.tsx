@@ -1,7 +1,7 @@
-import React from "react";
-import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Play, Pause, SkipForward, SkipBack } from "lucide-react";
+import { Pause, Play, SkipBack, SkipForward } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import React from "react";
 import ReactPlayer from "react-player";
 
 type MusicPlayerProps = {
@@ -36,6 +36,7 @@ export const AudioOnlyPlayer: React.FC<AudioOnlyPlayerProps> = ({
         playsInline
       />
     </div>
+    
   );
 };
 
@@ -195,7 +196,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             </div>
 
             <button
-              onClick={onPrev}
               className="flex-center absolute top-1/2 left-[calc(50%-50px)] z-50 size-10 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 max-sm:size-8"
               style={{
                 willChange: "transform",
@@ -240,7 +240,6 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
             </button>
 
             <button
-              onClick={onNext}
               className="flex-center absolute top-1/2 left-[calc(50%+50px)] z-50 size-10 rounded-full bg-black/60 text-white backdrop-blur-sm transition-all hover:bg-black/80 max-sm:size-8"
               style={{
                 willChange: "transform",

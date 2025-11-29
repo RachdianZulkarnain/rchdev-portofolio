@@ -28,7 +28,7 @@ const Projects = () => {
       image: "/projects/sc.png",
       live: "https://rachdian.vercel.app/",
       date: "Nov, 2025",
-      status: "In Progress",
+      status: "completed",
     },
     {
       title: "Homigo - Property Renting App",

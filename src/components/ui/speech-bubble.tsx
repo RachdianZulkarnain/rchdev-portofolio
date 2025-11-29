@@ -48,7 +48,7 @@ export interface SpeechBubbleProps extends React.HTMLAttributes<HTMLDivElement> 
         // remove bottom margin on last direct child
         "[&>*:last-child]:mb-0",
         // custom CSS for tail + pixel border
-        "bubble-tail pixel-border",
+        "pixel-border",
         className
       )}
       style={{ ...style, ...cssVars }}
